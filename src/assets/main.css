@@ -1,0 +1,49 @@
+@import './base.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100vh; /* Set container height to viewport height */
+  background: linear-gradient(to bottom, #000000, #3b27de);
+}
+.clicks-icon{
+  width: 24px;
+  margin: -4px 5px;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  font-weight: normal;
+  color: white;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    padding: 0 2rem;
+  }
+}
