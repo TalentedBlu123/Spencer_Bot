@@ -1,82 +1,66 @@
 <script setup>
-import AnimatedButton from './components/AnimatedButton.vue';
-import ProgressBar from './components/ProgressBar.vue';
-import LevelUpSplash from './components/LevelUpSplash.vue';
+
 </script>
 
 <template>
-  <div class="container">
-    
-    <h1><img src="./assets/droplet-nature.gif" alt="Clicks Icon" class="clicks-icon">{{ number }}</h1>
-    <AnimatedButton @click="handleClick">Hydrate</AnimatedButton>
-    <div class="flex-left">
-      <ProgressBar :value="progress" />
-    </div>
-    <LevelUpSplash :showSplash="showSplash" />
-    
-
-  </div>
+  <div class="loader">
+		<h1>Smart</h1>
+</div>
 </template>
 
 <script>
 export default {
   components: {
-    AnimatedButton,
-    ProgressBar,
-    LevelUpSplash
+    
   },
   data() {
     return {
-      number: 0,
-      progress: 0,
-      showSplash: false
+     
     };
   },
   methods: {
-    handleClick() {
-      if (this.progress < 100) {
-        this.number += 1;
-        this.progress += 5; // Increase progress by 5%
-      }
-      else {
-        this.progress = 1;
-        this.showSplash = true; // Show splash image
-        setTimeout(() => {
-          this.showSplash = false; // Hide splash image after 2 seconds
-        }, 2000);
-      }
-    }
+    
   }
 };
 </script>
 
 <style scoped>
-header {
-  line-height: 1.5;
+
+.loader{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	   -moz-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	     -o-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
 }
-.flex-left {
-  display:flex;
-  justify-content: left;
-  width:100%;
+
+.loader h1{
+	margin: 0;
+	padding: 0;
+	font-size: 10em;
+	color: rgba(255,255,255,.1);
+	background-image: url(https://image.ibb.co/ciSeac/image.png);
+	background-repeat: repeat-x;
+	-webkit-background-clip: text;
+	animation: animate 15s linear infinite;
+
 }
 
-
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+@keyframes animate{
+	0%{
+		background-position: left 0px top 80px;
+	}
+	40%{
+		background-position: left 800px top -50px;
+	}
+	80%{
+		background-position: left 1800px top -50px;
+	}
+	100%{
+		background-position: left 2400px top 80px;
+	}
 }
 </style>

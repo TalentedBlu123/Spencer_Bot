@@ -82,7 +82,7 @@ body{
   &:active{
     transform: scale(0.9);
     background-color: darken($button-bg, 5%);
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+    box-shadow: 0 2px 25px rgba(0, 255, 128, 0.69);
   }
   
   &.animate{
